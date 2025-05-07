@@ -16,7 +16,14 @@ pipeline {
 
         stage('Run Tests') {
             steps {
+                echo 'Running Python unittests...'
                 sh 'python -m unittest discover -s .'
+            }
+        }
+
+        stage('Done') {
+            steps {
+                echo 'Pipeline completed successfully!'
             }
         }
     }
